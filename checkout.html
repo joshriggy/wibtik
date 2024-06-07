@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitness Frontier - Product Page</title>
+        <link rel="stylesheet" href="checkstyle.css">
+        <style>
+            button, .nav-links a, .header-icons img {
+                transition: transform 0.3s, background-color 0.3s;
+            }
+            button:hover, .nav-links a:hover, .header-icons img:hover {
+                transform: scale(1.1);
+                background-color: #555;
+            }
+            .fade-out {
+                opacity: 0;
+                transition: opacity 0.5s ease-out;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-top">
+                <a href="index.html" class="logo"><img src="logo.png" alt="Fitness Frontier Logo"></a>
+                <input type="text" placeholder="Search" class="search-bar">
+                <div class="header-icons">
+                    <a href="loghtml.html"><img src="user.png" alt="Profile"></a>
+                    <a href="cartpage.html"><img src="shopping-cart.png" alt="Cart" class="cart"></a>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#on-sale">On Sale</a>
+                <a href="#fitness-apparels">Fitness Apparels</a>
+                <a href="#shop">Shop</a>
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="3pcsshaker.jpg" alt="Shaker"> 
+                </div>
+                <div class="product-details">
+                    <h1>Pulsate Shaker</h1>
+                    <p>4 Colors: Red, Pink, Black & Cyan</p>
+                    <p>$10.99</p>
+                    <p>Body text for describing why this product is simply a must-buy</p>
+                    <button>Add to cart</button>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Subscribe for our news!</p>
+            <input type="email" placeholder="email@domain.com">
+            <button>Subscribe</button>
+            <p>&copy; Fitness Frontier 2024</p>
+            <div>
+                <a href="#">Customer Care</a> | <a href="#">Question</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+            </div>
+        </footer>
+    </body>
+</html>

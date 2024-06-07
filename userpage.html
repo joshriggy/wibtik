@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fitness Frontier - User</title>
+    <link rel="stylesheet" href="userstyle.css">
+    <style>
+      button, .nav-links a, .header-icons img {
+          transition: transform 0.3s, background-color 0.3s;
+      }
+      button:hover, .nav-links a:hover, .header-icons img:hover {
+          transform: scale(1.1);
+          background-color: #555;
+      }
+      .fade-out {
+          opacity: 0;
+          transition: opacity 0.5s ease-out;
+      }
+  </style>
+</head>
+<body>
+  <header class="header">
+      <div class="header-top">
+          <a href="index.html" class="logo"><img src="logo.png" alt="Fitness Frontier Logo"></a>
+          <input type="text" placeholder="Search" class="search-bar">
+          <div class="header-icons">
+              <a href="loghtml.html"><img src="user.png" alt="Profile"></a>
+              <a href="cartpage.html"><img src="shopping-cart.png" alt="Cart" class="cart"></a>
+          </div>
+      </div>
+      <div class="nav-links">
+          <a href="#on-sale">On Sale</a>
+          <a href="#fitness-apparels">Fitness Apparels</a>
+          <a href="#shop">Shop</a>
+      </div>
+  </header>
+    <main>
+      <section class="my-account">
+          <h2>My Account</h2>
+          <div class="user-info">
+              <div class="profile-images">
+                  <div class="image"></div>
+                  <div class="image"></div>
+              </div>
+              <div class="personal-info">
+                  <h3>Personal Info</h3>
+                  <p>Email Address: tester132@gmail.com</p>
+                  <p>Password: ******** <button class="change-password">Change Password?</button></p>
+                  <p>Address Book:</p>
+                  <ol>
+                      <li>Calamba, Laguna</li>
+                      <li>Cabuyao, Laguna</li>
+                      <li>Sta. Rosa, Laguna</li>
+                  </ol>
+                  <p class="user-name">John Wick</p>
+                  <button class="log-out">Log Out</button>
+              </div>
+          </div>
+      </section>
+      <section class="order">
+          <h2>Order</h2>
+          <div class="order-item">
+              <div class="item-details">
+                  <div class="item-image" style="background-image: url('headphones.jpg');"></div>
+                  <div>
+                      <p class="item-name">Headphones</p>
+                      <p class="item-price">$10.99</p>
+                  </div>
+              </div>
+              <button class="remove-item">X</button>
+          </div>
+      </section>
+      <section class="payment">
+          <h2>Payment Method</h2>
+          <div class="payment-options">
+              <button class="payment-option">Cash On Delivery</button>
+              <button class="payment-option">Check</button>
+              <button class="payment-option">Credit Card or Debit Card</button>
+              <button class="payment-option">Transfer</button>
+          </div>
+      </section>
+    </main>
+    <footer class="footer">
+        <p>Subscribe for our news!</p>
+        <input type="email" placeholder="email@domain.com">
+        <button>Subscribe</button>
+        <p>&copy; Fitness Frontier 2024</p>
+        <div>
+            <a href="#">Customer Care</a> | <a href="#">Question</a> | <a href="#">Contact Us</a> | <a href="#">About Us</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".remove-item").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const orderItem = this.closest(".order-item");
+          orderItem.remove();
+          alert("Item removed from the cart.");
+        });
+      });
+      document.querySelectorAll(".payment-option").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const selectedMethod = this.dataset.method;
+          alert(`Payment method selected: ${selectedMethod}`);
+        });
+      });
+      document.querySelector(".subscribe-button").addEventListener("click", function() {
+        const emailInput = document.querySelector(".footer input[type='email']");
+        const email = emailInput.value;
+        if (email) {
+          alert(`Subscribed with email: ${email}`);
+          emailInput.value = ""; 
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      });
+      document.querySelector(".change-password").addEventListener("click", function() {
+        const newPassword = prompt("Enter your new password:");
+        if (newPassword) {
+          alert("Password changed successfully.");
+        }
+      });
+      document.querySelector(".log-out").addEventListener("click", function() {
+        alert("Logged out successfully.");
+      });
+    });
+    </script>
+  </body>
+</html>
